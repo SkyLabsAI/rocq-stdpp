@@ -210,7 +210,7 @@ Notation "'[tele_arg' ]" := (TargO)
    notations involving telescopes. *)
 Notation "'λ..' x .. y , e" :=
   (tele_app (tele_bind (λ x, .. (tele_app (tele_bind (λ y, e))) .. )))
-  (at level 200, x binder, y binder, right associativity,
+  (at level 10, x binder, y binder, e at level 200,
    format "'[  ' 'λ..'  x  ..  y ']' ,  e") : stdpp_scope.
 
 (** Telescopic quantifiers *)
@@ -222,10 +222,10 @@ Definition texist {TT : tele} (Ψ : TT → Prop) : Prop :=
 Global Arguments texist {!_} _ /.
 
 Notation "'∀..' x .. y , P" := (tforall (λ x, .. (tforall (λ y, P)) .. ))
-  (at level 200, x binder, y binder, right associativity,
+  (at level 10, x binder, y binder, P at level 200,
   format "∀..  x  ..  y ,  P") : stdpp_scope.
 Notation "'∃..' x .. y , P" := (texist (λ x, .. (texist (λ y, P)) .. ))
-  (at level 200, x binder, y binder, right associativity,
+  (at level 10, x binder, y binder, P at level 200,
   format "∃..  x  ..  y ,  P") : stdpp_scope.
 
 Lemma tforall_forall {TT : tele} (Ψ : TT → Prop) :

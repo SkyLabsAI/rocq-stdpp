@@ -3,6 +3,8 @@ API-breaking change is listed.
 
 ## std++ master
 
+Rocq 9.3 is now supported.
+
 **Detailed list of changes:**
 
 - Add lemma `sublist_filter_mono`. (by Benjamin Peters)
