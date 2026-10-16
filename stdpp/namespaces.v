@@ -10,13 +10,13 @@ Definition nroot : namespace := Namespace [].
 
 Local Definition ndot_def `{Countable A} (N : namespace) (x : A) : namespace :=
   Namespace $ encode x :: namespace_car N.
-Local Definition ndot_aux : seal (@ndot_def). by eexists. Qed.
+Local Definition ndot_aux : seal (@ndot_def). Proof. by eexists. Qed.
 Definition ndot {A A_dec A_count}:= unseal ndot_aux A A_dec A_count.
 Local Definition ndot_unseal : @ndot = @ndot_def := seal_eq ndot_aux.
 
 Local Definition nclose_def (N : namespace) : coPset :=
   coPset_suffixes (positives_flatten (namespace_car N)).
-Local Definition nclose_aux : seal (@nclose_def). by eexists. Qed.
+Local Definition nclose_aux : seal (@nclose_def). Proof. by eexists. Qed.
 Global Instance nclose : UpClose namespace coPset := unseal nclose_aux.
 Local Definition nclose_unseal : @nclose = @nclose_def := seal_eq nclose_aux.
 

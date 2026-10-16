@@ -254,7 +254,7 @@ Notation "'False'" := False (format "False") : type_scope.
 
 (** Change [forall] into a notation in order to enable overloading. *)
 Notation "'forall' x .. y , P" := (forall x, .. (forall y, P) ..)
-  (at level 200, x binder, y binder, right associativity,
+  (at level 10, x binder, y binder, P at level 200,
    only parsing) : type_scope.
 
 

@@ -5,7 +5,7 @@
 
 # Needs Stdlib 9.1.
 -w
--deprecated-reference-since-9.1
+-deprecated-since-Stdlib-9.1
 
 # Needs Rocq 9.2.
 -w
